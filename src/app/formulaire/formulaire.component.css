@@ -1,0 +1,205 @@
+/* Container styling */
+.container {
+  width: 60%; /* Adjust the width as desired (e.g., 80%, 90%) */
+  margin: auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: Arial; /* Choose a desired font family */
+  font-size: 80%; /* Adjust font size as needed */
+}
+
+/* Form group styling */
+.form-group {
+  flex: 1 0 50%; /* Adjust width if needed */
+  margin-bottom: 1em;
+}
+
+/* Form row styling */
+.form-row {
+  display: flex;
+}
+
+/* Form group label styling */
+.form-group label {
+  width: auto; /* Adjust label width if needed */
+  margin-right: 1em;
+  text-align: right;
+  color: #808080;
+}
+
+/* Input styling (general) */
+.input {
+  padding: 0.5em;
+}
+
+/* Styling for even form-group elements */
+.form-row .form-group:nth-child(even) {
+  margin-left: 1em; /* Add margin to left of even elements */
+}
+
+/* Styling for form inputs and selects */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Styling for the "+" button */
+.btn-tertiary {
+  background-color: #ddd; /* Adjust background color as needed */
+  color: #333; /* Adjust text color as needed */
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-symbol {
+  font-family: Arial, sans-serif; /* Ensure the font supports the symbol */
+}
+
+/* Styling for the button container */
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+/* Styling for buttons (general) */
+.btn {
+  padding: 0.5em 1em;
+}
+
+/* Styling for the primary button */
+.btn-primary {
+  background-color: #ffcc00;
+  color: #0a0a0a;
+  border: none;
+  margin-right: 0.5em;
+}
+
+/* Styling for the secondary button */
+.btn-secondary {
+  background-color: #ffcc00;
+  color: #0a0a0a;
+  border: none;
+  margin-right: 0.5em;
+}
+
+/* Styling for the last input width */
+.last-input input {
+  width: 50%; /* Adjust width as needed */
+}
+
+/* Styling for the last-input container width */
+.last-input {
+  width: calc(50% + 1em); /* Adjust width as needed */
+}
+.form-row .form-group_f input[type="text"],
+.form-row .form-group-f input[type="file"] {
+  width: 130px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  padding: 4px; /* Adjust padding for spacing around text */
+  font-size: 12px; /* Adjust font size if desired */
+  text-align: left; /* Align text to the left */
+  flex: 1 0 50%; /* Adjust width if needed */
+  margin-bottom: 1em;
+}
+h2,
+h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  position: relative;
+  color: #808080;
+  font-size:140%;
+}
+.form-control {
+  /* Existing styles for width, padding, etc. */
+  /* Additional styles for file input (optional): */
+  border: 1px solid #ccc; /* Example border style */
+}
+
+
+/* Styling for the highlight element */
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: calc(100% + 2px);
+  height: 1px;
+  background-color: #8a2be2;
+}
+
+#parcourir-btn {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ddd;
+  color: #333;
+}
+.file-input-group {
+  display: flex; /* Allow flexbox for horizontal layout */
+  align-items: center; /* Align items vertically */
+}
+
+.add-file-btn {
+  padding: 0.5em 1em; /* Adjust padding for desired button size */
+  border: 1px solid #ccc; /* Set a thin border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Indicate clickable behavior */
+  background-color: #eee; /* Set a light background color */
+  color: #333; /* Set button text color */
+  font-size: 1.2em; /* Adjust font size for a larger "+" symbol */
+}
+
+.add-file-btn:hover { /* Style changes on hover */
+  background-color: #ddd; /* Slightly darken the background on hover */
+}
+
+
+.form-group label + .input {
+  display: flex; /* Enable flexbox for the input container */
+  align-items: center; /* Align items vertically in the flexbox */
+}
+
+.form-group label + .input input {
+  flex: 1 0 auto; /* Allow the input to flex and fill available space */
+  margin-right: 0.5em; /* Add a small margin to the right of the input */
+}
+
+.form-group label + .input .btn-tertiary {
+  flex: 0 0 auto; /* Prevent the "+" button from flexing */
+  margin-right: 0; /* Remove the default margin from the button */
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/* Styling for the phone prefix */
+.phone-prefix {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+/* Ajustez les styles selon vos besoins */
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  padding-left: 50px; /* Ajustez selon votre mise en page */
+}
+

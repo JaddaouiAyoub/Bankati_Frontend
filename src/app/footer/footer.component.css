@@ -1,0 +1,110 @@
+.footer {
+  background-color: #127957; /* Couleur de fond */
+  padding: 20px ; /* Espace intérieur */
+  font-family:"Times New Roman ";
+  margin-left: -50px;
+}
+
+.footer .container {
+  max-width: 1000px; /* Largeur maximale */
+  margin: 0 auto; /* Centrer le contenu */
+}
+
+.footer .row {
+  display: flex; /* Pour aligner les colonnes horizontalement */
+  justify-content: space-between; /* Pour répartir les colonnes également */
+}
+
+.footer .col-md-3 {
+  flex: 0 0 20%; /* Définit la largeur de chaque colonne à 20% */
+}
+
+.card {
+  background-color: #ffffff; /* Couleur de fond des cartes */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0px 0px 10px rgb(0, 0, 0); /* Ombre légère */
+  width: 250px; /* Largeur des cartes */
+  height: 250px;
+  margin-right: 20px; /* Marge entre chaque carte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations de transition */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Effet de translation vers le haut au survol */
+  box-shadow: 0px 0px 20px rgb(255, 255, 255); /* Augmentation de l'ombre au survol */
+}
+
+.card-body {
+  padding: 20px; /* Espace intérieur des cartes */
+}
+
+.card-title {
+  font-size: 18px; /* Taille du titre */
+  margin-bottom: 10px; /* Espace sous le titre */
+  color: #ffa621;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+
+}
+
+.card-text {
+  font-size: 13px; /* Taille du texte */
+  color: #000000; /* Couleur du texte */
+  margin-bottom: 5px; /* Espace sous le texte */
+  text-align: LEFT;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.social-links a {
+  margin-top: 8px; /* Espace entre les liens sociaux */
+
+}
+
+.animated-link {
+  color: #000000; /* Couleur du lien animé */
+  transition: color 0.3s; /* Animation de transition de couleur */
+  margin-right: 37px;
+  margin-left: 45px;
+  padding-bottom: 5px;
+}
+
+.animated-link:hover {
+  color: #127957; /* Couleur du lien animé au survol */
+}
+
+.quick-links li {
+  margin-bottom: 5px; /* Espace entre les liens rapides */
+}
+
+.quick-links li a {
+  color: #6c757d; /* Couleur du texte des liens rapides */
+  transition: color 0.3s; /* Animation de transition de couleur */
+}
+
+.quick-links li a:hover {
+  color: #212529; /* Couleur du texte des liens rapides au survol */
+}
+
+.copyright p {
+  margin-bottom: 0; /* Supprimer l'espace sous le paragraphe */
+  font-size: 15px; /* Taille du texte du copyright */
+  color: #ffffff; /* Couleur du texte du copyright */
+}
+
+@media (max-width: 768px) {
+  .footer .card {
+    width: 100%; /* Pour les écrans plus petits, occupe toute la largeur */
+    margin-right: 0; /* Supprime la marge */
+    margin-bottom: 20px; /* Ajoute une marge en bas */
+  }
+}
+
+/* Réglages pour le copyright */
+.copyright {
+  text-align: center; /* Centrage du texte */
+  margin-top: 20px; /* Marge supérieure */
+  margin-left: 420px;
+
+}

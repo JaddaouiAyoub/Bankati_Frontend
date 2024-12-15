@@ -1,0 +1,63 @@
+<div class="container">
+  <h2>Ouverture d'un compte de paiement</h2>
+
+  <!-- Formulaire combiné -->
+  <div class="form-wrapper">
+    <div class="form-container">
+      <form [formGroup]="clientInfoForm" (ngSubmit)="onSubmit()">
+        <!-- Première étape: Informations client -->
+        <div *ngIf="currentPage === 1">
+          <div class="form-group">
+            <label for="product">Sélectionner un produit</label>
+            <select id="product" formControlName="product" class="form-control">
+              <option value="COMPTE_200">Hssab 1 - Plafond : 200 DH</option>
+              <option value="COMPTE_5000">Hssab 2 - Plafond : 5 000 DH</option>
+              <option value="COMPTE_20000">Hssab 3 - Plafond : 20 000 DH</option>
+              <option value="COMPTE_PROFESSIONNEL">Hssab 4 - Compte Professionnel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-item">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text" formControlName="nom" class="form-control">
+              </div>
+              <div class="input-item">
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text" formControlName="prenom" class="form-control">
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-item">
+                <label for="telephone">Téléphone</label>
+                <input id="telephone" type="tel" formControlName="telephone" class="form-control">
+              </div>
+              <div class="input-item">
+                <label for="email">Email</label>
+                <input id="email" type="email" formControlName="email" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button type="button" class="btn btn-primary" (click)="nextPage()">Suivant</button>
+          </div>
+        </div>
+
+        <!-- Deuxième étape: Téléchargement de la carte d'identité -->
+        <div *ngIf="currentPage === 2">
+          <div class="form-group">
+            <label for="cinRecto">Carte d'identité - Recto</label>
+            <input id="cinRecto" type="file" (change)="onFileChange($event, 'cinRecto')" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="cinVerso">Carte d'identité - Verso</label>
+            <input id="cinVerso" type="file" (change)="onFileChange($event, 'cinVerso')" class="form-control">
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

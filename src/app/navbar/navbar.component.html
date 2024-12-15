@@ -1,0 +1,8 @@
+<nav>
+  <a href="/">Accueil</a>
+  <a href="#Avantages">Avantages</a>
+  <a href="#fonctionnalites">Fonctionnalités</a>
+  <a href="#apropos">A propos</a>
+  <button (click)="navigateToBankeOnline()">Bank-e Online</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()">Déconnexion</button>
+</nav>

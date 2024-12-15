@@ -1,0 +1,56 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.table-controls {
+  margin-bottom: 10px;
+}
+
+.add-button {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.clients-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.agents-button {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.add-button:hover {
+  opacity: 0.8;
+}
+
+.canvas-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.chart-container {
+  width: 48%;
+}
+
+.canvas-container canvas {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}

@@ -1,0 +1,204 @@
+/* Style de la page de profil */
+.profile-page {
+  font-family: 'Arial', sans-serif;
+  width: 40%; /* Ajustez la largeur selon vos besoins */
+  margin: auto;
+  padding: 20px;
+  padding-top: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+
+}
+
+/* Style du contenu principal */
+.content {
+  position: relative;
+  max-height: 20%;
+  width: 100%; /* Ajustez la largeur selon vos besoins */
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+
+/* Style de la section de la photo de couverture */
+/* Style de la section de la photo de couverture */
+.content__cover {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #127957; /* Bordure jaune */
+}
+
+
+/* Style de l'avatar */
+.content__avatar {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+/* Style de la section de solde */
+.content__balance {
+  margin-bottom: 20px;
+}
+
+/* Style du bouton Afficher/Masquer le solde */
+#toggle-eye {
+  background-color: #ffa621;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 700px;
+}
+
+/* Style de la balance */
+.balance {
+  display: none;
+}
+
+.balance.visible {
+  display: block;
+}
+
+/* Style des boutons d'action */
+.content__actions {
+  text-align: center;
+}
+
+#toggle-transfer,
+#toggle-creditors {
+  background-color: #127957;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.content__client-name{
+  margin-top:20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+/* Style de l'avatar */
+.content__avatar {
+  width: 150px; /* Ajustez la taille de l'avatar selon vos besoins */
+  height: 150px; /* Ajustez la taille de l'avatar selon vos besoins */
+  background-image: url("https://png.pngtree.com/png-clipart/20230805/original/pngtree-user-flat-yellow-color-rounded-vector-icon-yellow-customer-avatar-vector-picture-image_9721471.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 2em;
+}
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  border-color: #127957;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "Afficher";
+  height: 90%;
+  width: 48%;
+  left: 2%;
+  border-radius: 20px;
+  background-color: #ffa621;
+  color: #000000;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 -1px 0 0 rgba(0, 0, 0, 0.1) inset, 0 -1.31em 1.31em -1.31em rgba(0, 0, 0, 0.3) inset, 0 0 1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  transition: .4s;
+}
+
+.slider:after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 1.71em;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.1));
+  z-index: -1;
+}
+
+.switch input:checked + .slider {
+  background-color: #ffa621;
+  color: #fff;
+}
+
+.switch input:checked + .slider:before {
+  content: "Masquer";
+  transform: translateX(100%);
+  color: #000000;
+}
+
+.switch input {
+  display: none;
+}
+.balance {
+  display: flex;
+  align-items: center;
+  margin-left:190px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+/* Style du libellé de la balance */
+/* Style du libellé de la balance */
+#balance-label {
+  margin-right: 10px; /* Ajustez la marge droite selon vos besoins */
+  font-weight: bold;
+
+}
+
+
+/* Style de la balance */
+/* Style du libellé de la balance */
+#balance-label {
+  margin-right: 5px; /* Réduisez la marge droite selon vos besoins */
+  font-weight: bold;
+}
+
+/* Style de la valeur du solde */
+#balance-value {
+  margin-right:120px; /* Réduisez la marge gauche selon vos besoins */
+  flex-grow: 1;
+  text-align: center;
+}

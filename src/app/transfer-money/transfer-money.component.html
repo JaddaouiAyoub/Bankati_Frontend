@@ -1,0 +1,37 @@
+<!-- bank-transfer.component.html -->
+<div class="transfer-container">
+  <div class="transfer-header">
+    <button class="back-button" (click)="goBack()">← Retour</button>
+  </div>
+  <div>
+    <h2>Effectuer un virement</h2>
+  </div>
+  <div class="transfer-menu">
+  </div>
+  <form class="transfer-form" (ngSubmit)="sendVerificationCode()">
+    <!-- Section du compte destination -->
+    <div class="form-group">
+      <label for="to-account">Bénéficiaire: </label>
+<!--      <input type="text" id="to-name" name="toAccount" [(ngModel)]="transferDetails.toAccount" placeholder=" Nom du bénéficiaire" required>-->
+      <input type="text" id="to-account" name="toAccount" [(ngModel)]="destinationAccountId" placeholder=" Introduire le numéro de compte" required>
+    </div>
+
+    <!-- Montant -->
+    <div class="form-group">
+      <label for="amount">Montant:</label>
+      <input type="number" id="amount" name="amount" [(ngModel)]="amount" placeholder="Entrez le montant en MAD" required>
+    </div>
+
+    <!-- Communication -->
+    <div class="form-group">
+      <label for="communication">Motif:</label>
+      <input type="text" id="communication" name="communication" [(ngModel)]="communication" placeholder="Ajouter un motif">
+    </div>
+
+    <!-- Actions -->
+    <div class="form-actions">
+      <button type="reset" class="cancel-button" >Reset</button>
+      <button type="submit" class="confirm-button">Confirmer</button>
+    </div>
+  </form>
+</div>

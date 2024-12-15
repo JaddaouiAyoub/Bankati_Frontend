@@ -1,0 +1,116 @@
+.payment-confirmation {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-confirmation h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.payment-confirmation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.payment-confirmation ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #555;
+}
+
+.payment-confirmation ul li:last-child {
+  border-bottom: none;
+}
+
+.payment-confirmation .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-confirmation .btn:hover {
+  background-color: #218838;
+}
+
+.invoice-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.invoice-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+.invoice-body {
+  margin-bottom: 20px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.invoice-table th, .invoice-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.invoice-footer {
+  margin-top: 20px;
+  font-style: italic;
+  color: #888;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Affichage pour imprimer */
+@media print {
+  .payment-confirmation {
+    max-width: none;
+    margin: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}

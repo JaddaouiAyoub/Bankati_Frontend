@@ -1,0 +1,112 @@
+.invoice-payment-container {
+  background-color: #ffffff;
+  padding: 50px;
+  padding-bottom: 50px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(255, 166, 33);
+  max-width: 870px;
+  max-height: 2600px;
+  margin-top: 60px;
+  margin-bottom:100px;
+
+}
+
+.payment-heading {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+.reference-section {
+  margin-top: 20px;
+}
+
+.reference-section h3 {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #ffa621;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+}
+
+.reference-details {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reference-item {
+  flex: 1;
+  text-align: center;
+}
+
+.reference-item img {
+  max-width: 80px;
+}
+
+.reference-item label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+  color: #000000;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+.reference-item span {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #127957;
+}
+
+.payment-selection {
+  margin-top: 20px;
+}
+
+.payment-selection h3 {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #ffa621;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  margin-top: 15px;
+}
+
+.payment-details {
+  margin-top: 10px;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 2px solid #000000;
+}
+
+.payment-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.validate-button {
+  background-color: #ffa621;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 770px;
+  margin-top: 60px;
+
+}
+
+.validate-button:hover {
+  background-color: #127957;
+}

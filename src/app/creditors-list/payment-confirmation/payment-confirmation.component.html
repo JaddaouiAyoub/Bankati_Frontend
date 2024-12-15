@@ -1,0 +1,91 @@
+
+<div class="payment-confirmation">
+
+  <!-- Affichage des données du formulaire et du bouton de confirmation si le paiement n'est pas encore confirmé -->
+  <div *ngIf="!paymentConfirmed">
+    <h3>Confirm Your Payment</h3>
+    <ul>
+      <li *ngFor="let entry of formData.entries()">
+        {{entry[0]}}: {{entry[1]}}
+      </li>
+    </ul>
+    <button (click)="confirmPayment()" class="btn btn-success">Confirm Payment</button>
+  </div>
+
+  <!-- Affichage du message de confirmation avec le bouton pour afficher la facture -->
+  <div *ngIf="paymentConfirmed && !showInvoice">
+    <h3>Payment Confirmed</h3>
+    <p>Your payment has been successfully processed.</p>
+    <button (click)="toggleInvoice(true)" class="btn btn-primary">View Invoice</button>
+  </div>
+
+  <!-- Affichage de la facture -->
+  <div *ngIf="showInvoice">
+    <div id="invoice" class="a4">
+      <!-- Contenu de la facture -->
+      <div class="invoice-container">
+        <div class="invoice-header">
+          <img src="assets/images/logo.png" alt="JIBI Logo" class="logo">
+          <h2>{{ description }}</h2>
+        </div>
+        <div class="invoice-body">
+          <p class="success-message">Votre paiement a été effectué avec succès.</p>
+          <div class="invoice-details">
+            <div class="invoice-row">
+              <span>Numéro d'appel:</span>
+              <span>{{ phoneNumber }}</span>
+            </div>
+            <div class="invoice-row">
+              <span>Courrier électronique:</span>
+              <span>{{ email }}</span>
+            </div>
+          </div>
+          <table class="invoice-table">
+            <thead>
+            <tr>
+              <th>Description</th>
+              <th>Montant</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Num.Facture: {{ invoiceNumber }} - Période: {{ period }}</td>
+              <td>{{ amount }} MAD</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>{{ amount }} MAD</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="payment-details">
+            <div class="invoice-row">
+              <span>Date de paiement:</span>
+              <span>{{ paymentDate }}</span>
+            </div>
+            <div class="invoice-row">
+              <span>N° d'autorisation:</span>
+              <span>{{ authorizationNumber }}</span>
+            </div>
+            <div class="invoice-row">
+              <span>Méthode de paiement:</span>
+              <span>{{ paymentMethod }}</span>
+            </div>
+            <div class="invoice-row">
+              <span>N° de carte de paiement:</span>
+              <span>{{ cardNumber }}</span>
+            </div>
+            <div class="invoice-row">
+              <span>N° transaction:</span>
+              <span>{{ transactionNumber }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="invoice-footer">
+          <p>N.B. En cas de problème, merci de contacter support de notre application JIBI.</p>
+        </div>
+      </div>
+    </div>
+    <button (click)="downloadInvoice()" class="btn btn-primary">Download Invoice</button>
+  </div>
+</div>

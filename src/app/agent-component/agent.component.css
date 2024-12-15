@@ -1,0 +1,142 @@
+.container {
+  position: relative;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.add-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clients-table th,
+.clients-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.clients-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.clients-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.clients-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+button .material-icons {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.view-button .material-icons {
+  color: blue;
+}
+
+.view-button .material-icons:hover {
+  color: darkblue;
+}
+
+.delete-button .material-icons {
+  color: red;
+}
+
+.delete-button .material-icons:hover {
+  color: darkred;
+}
+
+/* Styles pour flouter le fond */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+  z-index: 1000; /* Assure que l'overlay est au-dessus de tout le reste */
+  display: none; /* Initialement caché */
+}
+
+.create-payment-account-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1001; /* Assure que le contenu est au-dessus de l'overlay */
+  display: none; /* Initialement caché */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1;
+}
+
+.overlay.show-overlay {
+  display: block;
+}
+
+.client-details-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.close-button {
+  margin-top: 20px;
+}

@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Admin JIBI Espace</h2>
+
+  <!-- Liste des Clients -->
+  <div *ngIf="showClientsList">
+    <app-agent-component></app-agent-component>
+  </div>
+
+
+  <!-- Liste des Agents -->
+  <div *ngIf="showAgentsList">
+    <app-admin></app-admin>
+  </div>
+
+  <!-- Graphiques -->
+  <div class="canvas-container">
+    <div class="chart-container">
+      <button (click)="toggleAgentsList()" class="add-button agents-button">
+        {{ showAgentsList ? 'Masquer' : 'Afficher' }} les Agents
+      </button>
+      <canvas id="agentsChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <button (click)="toggleClientsList()" class="add-button clients-button">
+        {{ showClientsList ? 'Masquer' : 'Afficher' }} les Clients
+      </button>
+      <canvas id="clientsChart"></canvas>
+    </div>
+  </div>
+</div>

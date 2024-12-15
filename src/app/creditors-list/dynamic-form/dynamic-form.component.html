@@ -1,0 +1,52 @@
+<div *ngIf="showForm && formConfig">
+<div *ngIf="formConfig">
+  <h2>Form for {{formConfig.type}} - {{product}}</h2>
+  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of formConfig.fields">
+      <div class="form-group">
+        <label [for]="field.name">{{field.label}}</label>
+
+        <!-- Input for text fields -->
+        <input *ngIf="field.type === 'text'" [id]="field.name" type="text" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for email fields -->
+        <input *ngIf="field.type === 'email'" [id]="field.name" type="email" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for date fields -->
+        <input *ngIf="field.type === 'date'" [id]="field.name" type="date" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for number fields -->
+        <input *ngIf="field.type === 'number'" [id]="field.name" type="number" [formControlName]="field.name" class="form-control">
+
+        <!-- Specific inputs based on field.name -->
+        <!-- Select for predefined amounts in RECHARGE type -->
+        <select *ngIf="formConfig.type.toUpperCase() === 'RECHARGE' && field.name === 'amount'" [id]="field.name" [formControlName]="field.name" class="form-control">
+          <option *ngFor="let option of rechargeOptions" [value]="option">{{option}}</option>
+        </select>
+
+        <!-- Input for phone number in RECHARGE type -->
+        <input *ngIf="formConfig.type.toUpperCase() === 'RECHARGE' && field.name === 'phoneNumber'" [id]="field.name" type="text" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for amount in FACTURE and DONATION types -->
+        <input *ngIf="(formConfig.type.toUpperCase() === 'FACTURE' || formConfig.type.toUpperCase() === 'DONATION') && field.name === 'amount'" [id]="field.name" type="number" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for invoice number in FACTURE type -->
+        <input *ngIf="formConfig.type.toUpperCase() === 'FACTURE' && field.name === 'invoiceNumber'" [id]="field.name" type="text" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for donor name in DONATION type -->
+        <input *ngIf="formConfig.type.toUpperCase() === 'DONATION' && field.name === 'donorName'" [id]="field.name" type="text" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for due date in FACTURE type -->
+        <input *ngIf="formConfig.type.toUpperCase() === 'FACTURE' && field.name === 'dueDate'" [id]="field.name" type="date" [formControlName]="field.name" class="form-control">
+
+        <!-- Input for date in DONATION type -->
+        <input *ngIf="formConfig.type.toUpperCase() === 'DONATION' && field.name === 'date'" [id]="field.name" type="date" [formControlName]="field.name" class="form-control">
+
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<app-confirmation *ngIf="!showForm && formData" [formData]="formData" [formConfigType]="formConfig.type"></app-confirmation>

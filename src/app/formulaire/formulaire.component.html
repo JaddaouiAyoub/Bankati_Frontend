@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'Informations Personnelles</title>
+  <link rel="stylesheet" href="formulaire.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <h2><span class="highlight">Inform</span>ations personnelles</h2>
+
+  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom">Prénom *</label>
+        <input id="prenom" type="text" formControlName="prenom" class="form-control" required>
+        <div *ngIf="formulaire.controls['prenom'].invalid && (formulaire.controls['prenom'].dirty || formulaire.controls['prenom'].touched)" class="error-message">
+          Le prénom est obligatoire.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom *</label>
+        <input id="nom" type="text" formControlName="nom" class="form-control" required>
+        <div *ngIf="formulaire.controls['nom'].invalid && (formulaire.controls['nom'].dirty || formulaire.controls['nom'].touched)" class="error-message">
+          Le nom est obligatoire.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="pieceIdentite">Pièce d'identité *</label>
+        <select id="pieceIdentite" formControlName="pieceIdentite" class="form-control" required>
+          <option value="C.I.N">C.I.N</option>
+          <!-- Ajoutez d'autres options si nécessaire -->
+        </select>
+        <div *ngIf="formulaire.controls['pieceIdentite'].invalid && (formulaire.controls['pieceIdentite'].dirty || formulaire.controls['pieceIdentite'].touched)" class="error-message">
+          La pièce d'identité est obligatoire.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="numeroPieceIdentite">N° pièce d'identité *</label>
+        <input id="numeroPieceIdentite" type="text" formControlName="numeroPieceIdentite" class="form-control" required>
+        <div *ngIf="formulaire.controls['numeroPieceIdentite'].invalid && (formulaire.controls['numeroPieceIdentite'].dirty || formulaire.controls['numeroPieceIdentite'].touched)" class="error-message">
+          Le numéro de pièce d'identité est obligatoire.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="dateNaissance">Date de naissance *</label>
+        <input id="dateNaissance" type="date" formControlName="dateNaissance" class="form-control" required>
+        <div *ngIf="formulaire.controls['dateNaissance'].invalid && (formulaire.controls['dateNaissance'].dirty || formulaire.controls['dateNaissance'].touched)" class="error-message">
+          La date de naissance est obligatoire.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse *</label>
+        <input id="adresse" type="text" formControlName="adresse" class="form-control" required>
+        <div *ngIf="formulaire.controls['adresse'].invalid && (formulaire.controls['adresse'].dirty || formulaire.controls['adresse'].touched)" class="error-message">
+          L'adresse est obligatoire.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input id="email" type="email" formControlName="email" class="form-control" required>
+        <div *ngIf="formulaire.controls['email'].invalid && (formulaire.controls['email'].dirty || formulaire.controls['email'].touched)" class="error-message">
+          L'email est obligatoire et doit être valide.
+        </div>
+        <div *ngIf="emailExistsError" class="error-message">
+          Cet email existe déjà.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmationEmail">Confirmation Email *</label>
+        <input id="confirmationEmail" type="email" formControlName="confirmationEmail" class="form-control" required>
+        <div *ngIf="formulaire.controls['confirmationEmail'].invalid && (formulaire.controls['confirmationEmail'].dirty || formulaire.controls['confirmationEmail'].touched)" class="error-message">
+          La confirmation d'email est obligatoire et doit être valide.
+        </div>
+        <div *ngIf="emailConfirmationError" class="error-message">
+          Les adresses email ne correspondent pas.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="numeroTelephone">Numéro de téléphone *</label>
+        <div class="phone-prefix"></div>
+        <input id="numeroTelephone" type="tel" formControlName="numeroTelephone" class="form-control" required appPhonePrefix>
+        <div *ngIf="formulaire.controls['numeroTelephone'].invalid && (formulaire.controls['numeroTelephone'].dirty || formulaire.controls['numeroTelephone'].touched)" class="error-message">
+          Le numéro de téléphone est obligatoire.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="numeroImmatriculation">N° d'immatriculation au registre de commerce *</label>
+        <input id="numeroImmatriculation" type="text" formControlName="numeroImmatriculation" class="form-control" required>
+        <div *ngIf="formulaire.controls['numeroImmatriculation'].invalid && (formulaire.controls['numeroImmatriculation'].dirty || formulaire.controls['numeroImmatriculation'].touched)" class="error-message">
+          Le numéro d'immatriculation est obligatoire.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group last-input">
+        <label for="numeroPatente">N° de patente *</label>
+        <input id="numeroPatente" type="text" formControlName="numeroPatente" class="form-control" required>
+        <div *ngIf="formulaire.controls['numeroPatente'].invalid && (formulaire.controls['numeroPatente'].dirty || formulaire.controls['numeroPatente'].touched)" class="error-message">
+          Le numéro de patente est obligatoire.
+        </div>
+      </div>
+    </div>
+    <h3><span class="highlight">Pièces</span> jointes</h3>
+    <div class="form-row">
+      <div class="form-group-f">
+        <label for="description">Description</label>
+        <input id="description" type="text" formControlName="description" class="form-control">
+      </div>
+      <div class="form-group-f">
+        <label for="fichierRecto">Fichier Recto</label>
+        <input id="fichierRecto" type="file" (change)="onFileChange($event, 'recto')" class="form-control">
+      </div>
+      <div class="form-group-f">
+        <label for="fichierVerso">Fichier Verso</label>
+        <input id="fichierVerso" type="file" (change)="onFileChange($event, 'verso')" class="form-control">
+      </div>
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn btn-primary">
+        <span class="check-symbol">&#10003;</span> <strong>Enregistrer</strong>
+      </button>
+      <button type="button" class="btn btn-secondary">
+        <strong>Annuler</strong> <span class="cancel-symbol">&#10007;</span>
+      </button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

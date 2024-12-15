@@ -1,0 +1,37 @@
+<!-- profile.component.html -->
+<div class="profile-page">
+  <div class="content">
+    <div class="content__cover" *ngIf="clientDTO">
+      <div class="content__avatar"></div>
+      <div class="content__client-name">{{clientDTO.firstname}} {{clientDTO.lastname}}</div> <!-- Nom du client -->
+      <div class="content__balance">
+        <div class="balance">
+          <span id="balance-label">Solde: </span>
+          <span id="balance-value" *ngIf="showBalance">{{ clientDTO.bankAccountDTO.balance}} DH </span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="showBalance" id="toggle-eye">
+          <div class="slider"></div>
+        </label>
+      </div>
+      <div class="content__actions">
+        <a href="/transfer-money" id="toggle-transfer">Effectuer un virement</a>
+        <a href="/creditors-list" id="toggle-creditors">Liste des créanciers</a>
+      </div>
+    </div>
+    <div class="content__bull"><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div class="content__description">
+    <ul class="content__list">
+      <!-- Informations personnelles du client -->
+    </ul>
+  </div>
+</div>
+<div class="bg">
+  <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<div class="theme-switcher-button" id="theme-switcher-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+    <!-- Theme Switcher SVG -->
+  </svg>
+</div>

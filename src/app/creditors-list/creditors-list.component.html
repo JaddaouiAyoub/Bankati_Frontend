@@ -1,0 +1,64 @@
+<body>
+<h2 class="payment-heading">Paiement de facture</h2>
+<div class="container">
+  <div class="onglets">
+
+    <ul class="onglets__nav">
+      <li class="onglets__nav-item">
+        <a [routerLink]="'/creditors-list'" class="onglets__nav-link" [class.active]="activeTab === 'creditors'" (click)="activeTab = 'creditors'">Liste des créanciers</a>
+      </li>
+      <li class="onglets__nav-item">
+        <a [routerLink]="'/historique'" class="onglets__nav-link" [class.active]="activeTab === 'historique'" (click)="activeTab = 'historique'">Historique</a>
+      </li>
+    </ul>
+
+  </div>
+  <button class="back-button" (click)="goBack()">← Retour</button>
+  <div class="onglets__content">
+    <div id="creditors-list" class="onglets__pane" [class.active]="activeTab === 'creditors'">
+      <h2>Avec JIBI, Payez vos factures et effectuez des recharges...</h2>
+
+      <div class="creditors-grid">
+
+        <div class="creditor-pair" *ngFor="let pair of getCreditorPairs(filteredCreditors)">
+          <div class="creditor" *ngFor="let creditor of pair">
+            <div class="creditor-logo">
+              <img [src]="creditor.logo" alt="{{creditor.name}} logo">
+            </div>
+            <div class="creditor-products">
+              <label>{{creditor.name}}</label>
+              <ul>
+                <li *ngFor="let product of creditor.products">
+                  <button class="product-button" (click)="selectProduct(creditor.type, product)">{{product}}</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="historique" class="onglets__pane" [class.active]="activeTab === 'historique'">
+      <h2>Historique des paiements</h2>
+      <ul>
+        <li *ngFor="let payment of paymentHistory">
+          <div>
+            <span>{{ payment.description }} - {{ payment.amount }} MAD</span>
+            <!-- Ajoutez d'autres informations de paiement si nécessaire -->
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <!-- Popup for dynamic form -->
+  <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()"></div>
+  <div *ngIf="showPopup" class="popup">
+    <app-dynamic-form [formConfig]="selectedCreditorForm" [product]="selectedProduct" (formSubmit)="handleFormSubmit($event)"></app-dynamic-form>
+    <button (click)="closePopup()">Close</button>
+  </div>
+
+
+</div></div>
+</body>

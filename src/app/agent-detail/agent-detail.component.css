@@ -1,0 +1,51 @@
+.agent-details-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  width: 80%; /* Ajuster selon le besoin */
+  max-width: 600px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.details-grid div {
+  margin-bottom: 10px;
+}
+
+.full-width {
+  grid-column: 1 / -1; /* Faire en sorte que cet élément prenne toute la largeur */
+}
+
+.cin-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.close-button {
+  background-color: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-button:hover {
+  background-color: #c9302c;
+}

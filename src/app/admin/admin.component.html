@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Liste des Agents</h2>
+  <!-- Barre de recherche -->
+  <div class="search-container">
+    <input type="text" placeholder="Rechercher par CIN..." [(ngModel)]="searchCIN" (input)="filterAgents()" />
+  </div>
+  <div class="table-controls">
+    <button (click)="addAgent()" class="add-button">Ajouter un Agent</button>
+  </div>
+  <table class="clients-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Numéro CIN</th>
+      <th>Numéro de téléphone</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let agent of filteredAgents">
+      <td>{{ agent.id }}</td>
+      <td>{{ agent.lastname }}</td>
+      <td>{{ agent.firstname }}</td>
+      <td>{{ agent.email }}</td>
+      <td>{{ agent.numCin }}</td>
+      <td>{{ agent.phonenumber }}</td>
+      <td>
+        <button (click)="viewDetails(agent.id)" class="view-button">
+          <span class="material-icons">visibility</span>
+        </button>
+        <button (click)="deleteAgent(agent.id)" class="delete-button">
+          <span class="material-icons">delete</span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Overlay -->
+  <div class="overlay" [class.show-overlay]="selectedAgent !== null"></div>
+
+  <!-- Agent details component -->
+  <app-agent-detail *ngIf="selectedAgent" [agent]="selectedAgent" (close)="closeDetails()"></app-agent-detail>
+</div>

@@ -1,0 +1,90 @@
+.container {
+  position: fixed; /* Modifier la position en "fixed" */
+  top: 50%; /* Positionner au milieu de la page verticalement */
+  left: 50%; /* Positionner au milieu de la page horizontalement */
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9); /* Par exemple, fond blanc semi-transparent */
+  padding: 30px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgb(179, 192, 206); /* Ombre subtile */
+}
+
+.container.show { /* Ajoutez cette classe pour afficher le popup */
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-wrapper {
+  background-color: #fff; /* White background for the form */
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgb(179, 192, 206); /* Subtle shadow */
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+  color: #127957;
+  font-weight: bold;
+}
+h3 {
+  text-align: center;
+  font-weight:bold;
+  font-size: 20px;
+
+
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn {
+  background-color: #ffa621; /* Blue button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: rgba(18, 121, 87, 0.92); /* Darker blue on hover */
+}
+
+.check-symbol {
+  margin-right: 5px;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  margin-right: 10px;
+  color: #ffa621;
+}
+
+.close-button:hover {
+  color: #e00a0a; /* Change la couleur au survol */
+}

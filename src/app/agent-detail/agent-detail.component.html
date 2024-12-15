@@ -1,0 +1,23 @@
+<div *ngIf="agent" class="agent-details-modal">
+  <h2>Détails de l'Agent</h2>
+  <div class="details-grid">
+    <div><strong>ID :</strong> {{ agent.id }}</div>
+    <div><strong>Nom :</strong> {{ agent.lastname }}</div>
+    <div><strong>Prénom :</strong> {{ agent.firstname }}</div>
+    <div><strong>Email :</strong> {{ agent.email }}</div>
+    <div><strong>Numéro CIN :</strong> {{ agent.numCin }}</div>
+    <div><strong>Numéro de téléphone :</strong> {{ agent.phonenumber }}</div>
+    <div><strong>Adresse :</strong> {{ agent.address }}</div>
+    <div><strong>Date de naissance :</strong> {{ agent.birthdate }}</div>
+    <div class="full-width"><strong>Description :</strong> {{ agent.description }}</div>
+    <div>
+      <strong>CIN Recto :</strong>
+      <img [src]="agent.cinRectoPath" alt="CIN Recto" class="cin-image">
+    </div>
+    <div>
+      <strong>CIN Verso :</strong>
+      <img [src]="agent.cinVersoPath" alt="CIN Verso" class="cin-image">
+    </div>
+  </div>
+  <button (click)="closeDetails()" class="close-button">Fermer</button>
+</div>

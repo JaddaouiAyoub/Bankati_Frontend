@@ -1,0 +1,87 @@
+/* Overall form styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Form group label styling */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Form control styling */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Form control focus styling */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Submit button styling */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+/* Submit button hover effect */
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Add some responsive design */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+  }
+}
+
+/* Additional styling for optional error messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

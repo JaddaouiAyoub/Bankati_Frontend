@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+}
+/* Assurez-vous que le body et html prennent toute la hauteur */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Utilisez Flexbox sur le conteneur principal */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Le contenu doit prendre toute la place disponible */
+.content {
+  flex: 1;
+}
+
+/* Le footer peut être stylisé comme nécessaire */
+.footer {
+  background-color: #f8f9fa;
+  padding: 1em;
+  text-align: center;
+}

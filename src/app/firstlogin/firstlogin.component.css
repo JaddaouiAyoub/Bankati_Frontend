@@ -1,0 +1,62 @@
+/* firstlogin.component.css */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  border-left: 3px solid #333;
+}
+
+.form-wrapper {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-group:last-child {
+  border-bottom: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input, select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 0;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #ffb700;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

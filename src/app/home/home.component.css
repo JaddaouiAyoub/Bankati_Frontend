@@ -1,0 +1,403 @@
+.home {
+  font-family: 'Arial', sans-serif;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Position relative pour le positionnement absolu du bouton */
+}
+
+.cta {
+  position: absolute; /* Position absolue pour superposer le bouton à l'image */
+  top: 50%; /* Alignement vertical au centre */
+  left: 50%; /* Alignement horizontal au centre */
+  transform: translate(-50%, -50%); /* Centre le bouton */
+  margin: auto;
+  margin-left: 19.5rem;
+  margin-top: 7rem;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #ffa621;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #127957;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #127957;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #ffa621;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+.banner img {
+  width: 100%; /* Largeur de l'image */
+  height: auto; /* Hauteur auto pour conserver les proportions */
+  max-height: 700px; /* Hauteur maximale pour l'image */
+}
+
+.features {
+  padding: 50px 20px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.features h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-style:italic ;
+  font-family: "Arial serif";
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.section-heading{
+  font-size: 20px;
+  margin-bottom: 80px;
+  margin-left: 220px;
+  font-style:italic ;
+  font-family: "Arial serif";
+  margin-top: 20px;
+  padding-top:30px ;
+}
+
+.features p {
+  font-size: 18px;
+  margin-bottom: 40px;
+
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background-color: #e0f2f1;
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid #127957; /* Bordure verte à gauche */
+}
+
+.feature h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+}
+
+.feature:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature:hover:before {
+  transform: scale(1);
+}
+
+.feature:hover h3, .feature:hover p {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-left: 4px solid #127957; /* Bordure verte à gauche */
+}
+
+.circle-icon {
+  margin-bottom: 10px;
+}
+
+.circle-icon img.img-hover {
+  display: none;
+}
+
+.card:hover .circle-icon img.img-hover {
+  display: inline;
+}
+
+.card:hover .circle-icon img:not(.img-hover) {
+  display: none;
+}
+/* Alignement des sections Virements et Factures côte à côte */
+.row-grid.align-items-center.text-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style de la section Virements */
+.virement h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.factures{
+  margin-right: 80px;
+}
+.virement{
+  margin-left: 80px;
+}
+/* Style de la section Factures */
+.factures h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+/* Style des paragraphes */
+.virement p {
+  font-size: 18px;
+  margin-bottom: 80px; /* Ajustez cette valeur selon vos besoins */
+  margin-top: -50px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.factures p {
+  font-size: 18px;
+  margin-bottom: 80px; /* Ajustez cette valeur selon vos besoins */
+  margin-top: -50px; /* Ajustez cette valeur selon vos besoins */
+
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 240px;
+  height: 154px;
+  perspective: 1000px;
+  font-size:16px;
+  font-weight:bold;
+  color: black;
+  margin-bottom: 100px;
+  margin-right: 60px;
+}
+
+.heading_8264 {
+  position: absolute;
+  letter-spacing: .2em;
+  font-size: 10px;
+  font-weight:bold;
+
+  top: 2em;
+  left: 18.6em;
+}
+
+.logo {
+  position: absolute;
+  top: 6.8em;
+  left: 11.7em;
+}
+
+.chip {
+  position: absolute;
+  top: 2.3em;
+  left: 1.5em;
+}
+
+.contactless {
+  position: absolute;
+  top: 3.5em;
+  left: 12.4em;
+}
+
+.number {
+  position: absolute;
+  font-weight: bold;
+  font-size: .6em;
+  top: 8.3em;
+  left: 1.6em;
+}
+
+.valid_thru {
+  position: absolute;
+  font-weight: bold;
+  top: 635.8em;
+  font-size: .01em;
+  left: 140.3em;
+}
+
+.date_8264 {
+  position: absolute;
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 13.6em;
+  left: 3.2em;
+}
+
+.name {
+  position: absolute;
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 16.1em;
+  left: 2em;
+}
+
+.strip {
+  position: absolute;
+  background-color: white;
+  width: 15em;
+  height: 1.5em;
+  top: 2.4em;
+  background: repeating-linear-gradient(
+    45deg,
+    #127957,
+    #202020 10px,
+    #ffa621 10px,
+    #127957
+  );
+}
+
+.mstrip {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 8em;
+  height: 0.8em;
+  top: 5em;
+  left: .8em;
+  border-radius: 2.5px;
+}
+
+.sstrip {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 4.1em;
+  height: 0.8em;
+  top: 5em;
+  left: 10em;
+  border-radius: 2.5px;
+}
+
+.code {
+  font-weight: bold;
+  text-align: center;
+  margin: .2em;
+  color: #127957;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #ffa621
+}
+
+.flip-card-back {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #ffa621;
+  transform: rotateY(180deg);
+}
+.virement {
+  text-align: right;
+  margin-right: 50px; /* Ajustez cette valeur selon vos besoins */
+
+}
+
+.virement h2, .virement h5 {
+  margin-bottom: 10px;
+
+}
